@@ -70,7 +70,7 @@ export default function Login() {
   				<div className="logo_foter">
           <Link className="a_logo" href="/registration">Регистрация</Link>   
 				
-				<a className="a_logo" href="">Восстановить пароль?</a>
+				<a className="a_logo" href="">Восстановить пароль</a>
 			</div>
   
 			</form>
