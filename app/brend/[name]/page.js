@@ -1,37 +1,44 @@
 'use client'
 import { useParams } from 'next/navigation'
 import Link from "next/link"
+import { useState, useEffect } from 'react';
 
-async function  fetcBrend(params){
-  console.log(params)
-  const brend =  await fetch('http://127.0.0.1:8000/'+decodeURIComponent(params.name))
-  const res = await brend.json()
-  console.log(res)
-  return res
-}
-
-
-
-export default  async function brend( ) {
-  const params = await useParams()
-  const brend = await fetcBrend(params);
+export default function  fetcBrend(){
+  const [brend, setBrend] = useState(null);
+  const params = useParams()
   
+  useEffect(() => {
+    async function fetchUser() {
+      
+      
+      const res = await fetch('http://127.0.0.1:8000/'+decodeURIComponent(params.name))
+      if (res.status == 200) {
+        const json = await res.json();
+        setBrend(json);
    
+    }
+  }
+    fetchUser();
+  }, []);
+  console.log(brend)
+  if(brend){brend.map(al =>(console.log("al",al)))}
+  
  
-     
+
+
+ 
 
     return (
-      <div key='Product_name'>
-          {brend.map(al =>(
-            <div className='detail'>
-                    <h1>{al.Manufacturer}</h1>
-                    <p>{ al.Model}</p>
-                    <p>{ al.Product_name}</p>
-                    <p>{ al.Price} Руб</p>
-                   
-                    <Link  href={al.Image}><img src={al.Image}  width="150" height="200"></img></Link>
-                    <div className='contener_flex'  key='Product_buy'>
+    brend && (brend.map(al =>(<div key={al.key} className='detail'>
+             <h1 key={al.key + 'Manufacturer'} >{al.Manufacturer}</h1>
+              <p key={al.key + 'Model' }>{ al.Model}</p>
+              <p key={al.key + 'Product_name' }>{ al.Product_name}</p>
+               <p key={al.ke + 'Price'}>{ al.Price} Руб</p>
+
+               <Link  key={al.key + 'link'} href={al.Image}><img src={al.Image}  width="150" height="200"></img></Link>
+                    <div className='contener_flex'   key={al}>
                     <button
+                     key={al.key + 'button'}
                         type="submit"
                         className="lf--submit"
                         
@@ -43,16 +50,9 @@ export default  async function brend( ) {
                         > В карзину</button>
                       
                     </div> 
-                    
-				                
-				                 
-				           
-            </div> 
-		            ))}; 
-                
-        </div>     
+
+               </div> 
       
-    )
-    
-  }
-  
+    ) )) 
+  )}
+           
