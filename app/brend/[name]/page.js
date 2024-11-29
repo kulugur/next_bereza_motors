@@ -11,7 +11,7 @@ export default function  fetcBrend(){
     async function fetchUser() {
       
       
-      const res = await fetch('https://fastapi-bereza-motors.onrender.com'+decodeURIComponent(params.name))
+      const res = await fetch('https://fastapi-bereza-motors.onrender.com/'+decodeURIComponent(params.name))
       if (res.status == 200) {
         const json = await res.json();
         setBrend(json);
