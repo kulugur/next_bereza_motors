@@ -26,7 +26,7 @@ export default function RegisterPage() {
 			"phone": phone
 		  }
 		try {  
-    		const response = await axios.post('http://127.0.0.1:8000/auth/register',config,
+    		const response = await axios.post('https://fastapi-bereza-motors.onrender.com/auth/register',config,
       		{
           	headers:  { 'Content-Type': 'application/json' }
       		},
