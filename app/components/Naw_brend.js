@@ -1,4 +1,3 @@
-
 import Link from "next/link"
 
 
@@ -20,7 +19,7 @@ const Nav_brend = async () =>{
 		<div className="dws-menu left_menu ">
 		    <ul>
                 
-                <li key='1'><Link href="#"><i className="fa fa-shopping-cart"></i>Продукция</Link>
+                <li ><Link href="#"><i className="fa fa-shopping-cart"></i>Продукция</Link>
 	                {brends.map(al =>(
 		                <ul> 
 			                <li key={al.Manufacturer}>
