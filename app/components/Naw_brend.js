@@ -19,15 +19,15 @@ const Nav_brend = async () =>{
 		<div className="dws-menu left_menu ">
 		    <ul>
                 
-                <li ><Link href="#"><i className="fa fa-shopping-cart"></i>Продукция</Link>
+                <li key='1'><Link href="#"><i className="fa fa-shopping-cart"></i>Продукция</Link>
 	                {brends.map(al =>(
-		                <ul> 
-			                <li key={al.Manufacturer}>
+		                <ul key={al.key +'ul'}> 
+			                <li key={al.key + al.Manufacturer}>
 				                <Link key={al.Manufacturer} href="#">{al.Manufacturer}</Link>
-				                <ul>
-				                    <li>
+				                <ul key={al.key +'ul_2'}>
+				                    <li key={al.key +'li'}>
 					                    {al.Model.map(model =>(
-						                <Link key={model} href={"./brend/"+model}>{model}</Link>
+						                <Link key={al.key + model} href={"./brend/"+model}>{model}</Link>
 					                    ))}
 				                    </li>
 				                </ul>
