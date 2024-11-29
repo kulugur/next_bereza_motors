@@ -6,7 +6,7 @@ import Auto_box from'./components/Auto_box'
 async function fetcBrends(){
   const brend = await fetch('http://127.0.0.1:8000/brands')
   const res = await brend.json()
-console.log(res)
+
   return res
 }
 

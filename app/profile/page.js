@@ -35,7 +35,7 @@ export default  function LoginPage() {
   
 
 
-    console.log(user)
+
     
     return(
         <><div className="exit"><Link  href="/">

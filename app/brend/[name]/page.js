@@ -20,8 +20,8 @@ export default function  fetcBrend(){
   }
     fetchUser();
   }, []);
-  console.log(brend)
-  if(brend){brend.map(al =>(console.log("al",al)))}
+
+ 
   
  
 

@@ -32,11 +32,11 @@ export default function RegisterPage() {
       		},
   			)
 
-			console.log(response)
+		
   			if (response.statusText) {
       		router.push('/auth')
     		} else {
-      		console.log(response)
+      		
     		}
 		} catch (error) {
 			if(error.response.data.detail == "REGISTER_USER_ALREADY_EXISTS"){
