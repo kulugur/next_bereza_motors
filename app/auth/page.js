@@ -21,6 +21,7 @@ export default function Login() {
     const formData = new FormData();
     formData.append('username', username);
     formData.append('password', password);
+
     const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/auth/jwt/login`, {
       method: 'POST',
       body: formData
@@ -33,7 +34,7 @@ export default function Login() {
       alert('Login failed.')
     }
   }
-
+  console.log(`${process.env.NEXT_PUBLIC_API_URL}/auth/jwt/login`)
   return (<>
     <div className="exit">
     <Link  href="/">
