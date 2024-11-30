@@ -1,19 +1,43 @@
-
+'use client'
 import Link from "next/link"
-import { FormEvent } from 'react'
+import { useState, useEffect } from 'react';
+
 const Nav_bar = () =>{
+	const [user, setUser] = useState(null);
+  
+
+  useEffect(() => {
+    const token = localStorage.getItem('token');
+    async function fetchUser() {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/user_my`, {
+        headers: {
+          'Authorization': `Bearer ${token}`
+        }
+      });
+      if (res.status == 200) {
+        const json = await res.json();
+        setUser(json);
+      } else {
+        
+      }
+    }
+    fetchUser();
+  }, []);
     return(
         
         <div className="nav_2">
 			<div className="reg">
-				<Link  className="reg_btn"href="/profile">Личный кабинет</Link>
-				<Link  className="reg_a" href="/registration">Регистрация</Link>
+				
+			{user && (<Link  className="reg_btn"href="/profile">Личный кабинет</Link>)}
+			{user == null && (<Link  className="reg_a" href="/registration">Регистрация</Link>)}	
+			{user == null && (<Link  className="reg_a" href="/auth">Вход</Link>)}
 				
 				
 			</div>
             <div className="nav_icon">
 				<img className="img_icon" src="img/basket.png" alt=""width="24" height="24"/>
-				<img className="img_icon" src="img/list.png" alt="" width="24" height="24"/>
+				<Link   href="./brend/all"><img className="img_icon"  src="img/list.png" alt="" width="24" height="24"/></Link>
+				
 			</div>
             <div >
 				<form> 
