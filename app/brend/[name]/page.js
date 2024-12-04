@@ -6,12 +6,31 @@ import { useState, useEffect } from 'react';
 export default function  fetcBrend(){
   const [brend, setBrend] = useState(null);
   const params = useParams()
+
+  async function setBasket_key(e) {
+
+
+        const token = localStorage.getItem('token');
+        await fetch(`${process.env.NEXT_PUBLIC_API_URL}/set_basket/${e.target.value}`, {
+            headers: {
+              'Authorization': `Bearer ${token}`
+            }
+          });
+  
+  }
+ 
+
+
+
+   
+    
+ 
   
   useEffect(() => {
     async function fetchUser() {
       
       
-      const res = await fetch('https://fastapi-bereza-motors.onrender.com/'+decodeURIComponent(params.name))
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL+`/` +decodeURIComponent(params.name)}`)
       if (res.status == 200) {
         const json = await res.json();
         setBrend(json);
@@ -20,7 +39,7 @@ export default function  fetcBrend(){
   }
     fetchUser();
   }, []);
-
+  
  
   
  
@@ -29,7 +48,7 @@ export default function  fetcBrend(){
  
 
     return (<><div className="exit"><Link  href="/">
-      <img src="img/exit.png" alt=""width="24" height="24"/>
+      <img src="../img/exit.png" alt=""width="24" height="24"/>
       </Link>  
        </div>
     {brend && (brend.map(al =>(<div key={al.key} className='detail'>
@@ -47,9 +66,10 @@ export default function  fetcBrend(){
                         
                       > Купить</button>
                       <button
-                        type="submit"
+                        type="button"
+                        value={al.key}
                         className="lf--submit"
-                       
+                        onClick={setBasket_key}
                         > В карзину</button>
                       
                     </div> 

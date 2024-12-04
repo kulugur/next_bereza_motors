@@ -26,22 +26,21 @@ export default function RegisterPage() {
 			"phone": phone
 		  }
 		try {  
-    		const response = await axios.post('https://fastapi-bereza-motors.onrender.com/auth/register',config,
+			
+    		const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/auth/register`,config,
       		{
           	headers:  { 'Content-Type': 'application/json' }
       		},
   			)
 
-		
-  			if (response.statusText) {
+			
+  			if (response.status == 201) {
       		router.push('/auth')
     		} else {
       		
     		}
 		} catch (error) {
-			if(error.response.data.detail == "REGISTER_USER_ALREADY_EXISTS"){
-				router.push('/auth')
-			}
+			console.log(error)
 				
 			
 		  }	
@@ -58,7 +57,7 @@ export default function RegisterPage() {
 	
 		<form className="login_form" onSubmit={registration} >
 			<div className="row_logo">
-				<h5>ЛИЧНЫЙ КАБИНЕТ</h5>
+				<h2 >Регистрация</h2>
 			  </div>
 			  < div className="flex-row">
 				<input id="phone" name="phone" className='lf--input' placeholder='Введите номер телефона' type='text'/>

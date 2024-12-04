@@ -100,6 +100,10 @@ img {
     padding-right: 14%;
     color: #ffffff;
 }
+.reg_a p{
+
+    color: #f5d60d;
+} 
 .reg_btn{
 
 	float: right;
@@ -121,7 +125,13 @@ img {
     padding-left: 25%;
     padding-top: 2%;
     padding-bottom: 2%;
+
 }
+.img_icon a:hover{
+	background: #b2b3b5;
+	
+}
+
 .nav_search{
 	width: 90%;
 	background-color: #d1bb3396;
@@ -158,10 +168,11 @@ img {
 }
 .auto_box{
 	
+	padding-right: 2vh;
 	display: flex;
 	flex-flow: row wrap;
-  	align-content: space-between;
-  	justify-content: space-between;
+  
+  	justify-content: center;
 	
 }
 .content_auto{
@@ -341,6 +352,7 @@ img {
 
    }
    .detail p{
+	padding-left: 1vh;
 	margin: 0%;
 
    }
@@ -372,5 +384,27 @@ img {
 }
 .widh_35{
 	max-width: 35%;
+}
+.nav_emai{
+	margin-bottom:1vh;
+    margin-top: 2vh;
+    text-decoration: none;
+	float: right;
+    padding-right: 6%;
+    color: #dfc741;
+
+}
+.serch_res{
+	display: grid;
+	margin-left: 3vh;
+	background: #f0e5a933;
+}
+.serch_res a{
+	color: #dfc741;
+	margin: 1vh;
+	border: #454547;
+}
+.serch_res a:hover {
+	background-color: #e6e6e68f;
 }
   

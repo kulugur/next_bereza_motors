@@ -31,7 +31,7 @@ export default function Login() {
       localStorage.setItem('token', json.access_token);
       router.push("profile");
     } else {
-      alert('Login failed.')
+      alert('Login failed.', res.status)
     }
   }
   console.log(`${process.env.NEXT_PUBLIC_API_URL}/auth/jwt/login`)

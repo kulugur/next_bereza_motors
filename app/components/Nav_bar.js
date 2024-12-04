@@ -29,30 +29,31 @@ const Nav_bar = () =>{
 			<div className="reg">
 				
 			{user && (<Link  className="reg_btn"href="/profile">Личный кабинет</Link>)}
-			{user == null && (<Link  className="reg_a" href="/registration">Регистрация</Link>)}	
-			{user == null && (<Link  className="reg_a" href="/auth">Вход</Link>)}
+      {user && (<h4 className="nav_emai">{user.email}</h4>)}
+			{user == null && (<Link  className="reg_a" href="/registration"><p>Регистрация</p></Link>)}	
+			{user == null && (<Link  className="reg_a" href="/auth"><p>Вход</p></Link>)}
 				
 				
 			</div>
             <div className="nav_icon">
-				<img className="img_icon" src="img/basket.png" alt=""width="24" height="24"/>
+            <Link   href="./basket"><img className="img_icon" src="img/basket.png" alt=""width="24" height="24"/></Link>
 				<Link   href="./brend/all"><img className="img_icon"  src="img/list.png" alt="" width="24" height="24"/></Link>
 				
 			</div>
             <div >
-				<form> 
+				{/* <form> 
   					<input className="nav_search search"type="search" name="text"  placeholder="Что вы хотите найти?"/>
   					<input type="submit" name="submit" className="search_btn" value="Найти"/>
-				</form>
+				</form> */}
 			</div>
             <div>
 				<h2 className="nav_h2">Все марки</h2>
 			</div>
             <div>
-				<form> 
+				{/* <form> 
   					<input className="nav_search search"type="search" name="text"  placeholder="Что вы хотите найти?"/>
   					<input type="submit" name="submit" className="search_btn" value="Найти"/>
-				</form>
+				</form> */}
 			</div>
             
         </div>  

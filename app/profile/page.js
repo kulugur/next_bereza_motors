@@ -3,10 +3,11 @@ import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from "next/link"
 
+
 export default  function LoginPage() {
   const [user, setUser] = useState(null);
   const router = useRouter();
-
+  console.log(`${process.env.NEXT_PUBLIC_API_URL}user_my`)
   useEffect(() => {
     const token = localStorage.getItem('token');
     async function fetchUser() {
@@ -45,8 +46,11 @@ export default  function LoginPage() {
         <div className='contener_flex profil'>
          
             <h1>Личный кабинет</h1>
+            <div className="nav_icon">
+            <Link   href="./basket"><img className="img_icon" src="img/basket.png" alt=""width="24" height="24"/></Link> </div>
         <div className='prof_user'> 
            {user && (
+         
             <p>ID - {user.id}</p>
            
         )}

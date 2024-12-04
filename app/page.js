@@ -2,6 +2,7 @@
 //import Nav_brend from './components/Naw_brend'
 import Nav_bar from './components/Nav_bar'
 import Auto_box from'./components/Auto_box'
+import MySearchComponent from './components/Serch'
 
 
 
@@ -18,8 +19,9 @@ import Auto_box from'./components/Auto_box'
 
     
     <Nav_bar/>
-    
+ 
     </div>
+    <MySearchComponent/>
     <Auto_box/>
     <div className="foter">
 		
