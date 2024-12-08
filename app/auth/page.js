@@ -29,7 +29,7 @@ export default function Login() {
     if (res.status == 200) {
       const json = await res.json();
       localStorage.setItem('token', json.access_token);
-      router.push("profile");
+      router.push("/");
     } else {
       alert('Login failed.', res.status)
     }

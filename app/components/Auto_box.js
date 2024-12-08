@@ -4,10 +4,10 @@ const Auto_box = () =>{
     return(<div className="auto_box">
 		<div  className="content_auto">
 			
-			<Link  href={"./brend/AUDI"}>
+		<Link  href={"./brend/AUDI"}>
 			<img className="img_auto" src="img/AUDI.png" alt="" width="95" height="100"/>
 			</Link>
-			<p>AUDI</p>
+			<p>AUDI</p> 
 		</div>
 		<div  className="content_auto">
 		<Link  href={"./brend/BMW"}><img src="img/BMW.png" alt=""width="95" height="100"/></Link>

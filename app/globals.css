@@ -220,7 +220,7 @@ img {
 .lf--submit{
 	margin-bottom: 2vh;
 	margin-top: 2vh;
-	margin-left:18%;
+	
 	background-color: #f5d60d;
 	border-radius: 12px;
 	padding: 3% 15% 3% 15%;
@@ -357,7 +357,7 @@ img {
 
    }
    .detail img{
-	padding-left: 2vh;
+	
     max-height: 95%;
 
    }
@@ -383,6 +383,7 @@ img {
 	margin-left: auto;
 }
 .widh_35{
+	padding-bottom: 2vh;
 	max-width: 35%;
 }
 .nav_emai{
@@ -407,4 +408,103 @@ img {
 .serch_res a:hover {
 	background-color: #e6e6e68f;
 }
-  
+.baket_naw{
+	display: flex;
+	position: fixed;
+	width: 90%;
+	
+}
+.baket{
+	
+	justify-content: space-between;
+	border-radius: 9px;
+	margin-left: 2vh;
+	display: flex;
+	padding-left: 2vh;
+	padding-right: 12vh;
+	width: 100%;
+	background: #e6e6e68f;
+	
+} 
+.baket img{
+
+	padding-top: 1vh;
+}
+.baket p{
+	
+	padding: 2vh 4vh 0vh 6vh;
+    margin: 0;
+}
+.baket_button{
+    padding: 3% 15% 3% 15%;
+	cursor: pointer;
+
+
+}
+.counter__plus {
+	
+	cursor: pointer;
+	max-height: 6vh;
+}
+.counter__minus {
+	margin-left: 5vh;
+	
+	cursor: pointer;
+	max-height: 6vh;
+
+}
+.counter__p {
+	padding: 1vh 3vh 0vh 2vh;
+		text-align: center;
+		-webkit-transition: 0.2s;
+		-o-transition: 0.2s;
+		transition: 0.2s;
+		max-height: 5vh;
+		max-width: 110px;
+		color: #000;
+	}
+
+.counter__selector {
+    display: inline-block;
+    position: relative;
+}
+
+
+.contener_detal{
+	display: contents;
+}
+.sum_p{
+	position: absolute;
+}
+@media(max-width: 992px){
+	/*Стили, на устройствах с максимальной ширеной экрана 992 пикселя и меньше */
+	}
+@media(max-width: 768px){
+	/*Стили, на устройствах с максимальной ширеной экрана 768 пикселей и меньше */ 
+	}
+	
+@media(max-width: 500px){
+	.exit {
+		position:absolute ;
+		margin: 0;
+	}
+	.baket {
+		justify-content: space-between;
+		border-radius: 9px;
+		/* margin-left: 2vh; */
+		display: block;
+		margin-left: 8vh;
+		padding-left: 2vh;
+		padding-right: 12vh;
+		width: 50%;
+		background: #e6e6e68f;}
+	.reg {
+			float: right;
+			padding-right: 1%;
+			
+			background-color: #232e49;
+		}
+}
+.padding_2vh{
+padding-top: 14vh;
+}
